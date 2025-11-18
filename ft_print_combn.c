@@ -14,8 +14,6 @@ void	ft_print_array(char v[], int size, int last)
 		while (i < size)
 		{
 			ft_putchar(v[i++]);
-			//write (1, ".\n", 2);
-			//return;
 		}
 		write (1, ".", 1);
 		return;
@@ -23,7 +21,6 @@ void	ft_print_array(char v[], int size, int last)
 	while (i < size)
 	{
 		ft_putchar(v[i++]);
-		//write (1, ", ", 2);
 	}
 	write (1, ", ", 2);
 }
@@ -45,13 +42,12 @@ void	ft_print_combn(int n)
 	}
 
 ft_print_array(v, n, V[0]);
-//this while loop used to find the sentinel
 while (v[0] != V[0])
 {
 	flag = n - 1;
 	while (v[flag] == V[flag])
-		--flag;//to find the sentinel value 
-	base = ++(v[flag]);//thr values has to be in ascending order
+		--flag; 
+	base = ++(v[flag]);
 	while (flag < n - 1)
 		v[++flag] = ++base;
 	ft_print_array(v, n, V[0]);
